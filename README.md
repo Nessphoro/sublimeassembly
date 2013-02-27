@@ -3,7 +3,7 @@ sublimeassembly
 Provides actually decent code highlighting for x86-64 assembly in Sublime Text 2 / TextMate.
 It includes full x86-64 instruction set, along with all NASM directives.
 
-====License====
+
 Copyright (c) 2013, Pavlo Malynin
 All rights reserved.
 
