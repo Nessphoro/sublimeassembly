@@ -30,9 +30,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(0x)(?i)[A-F0-9]+\b</string>
+			<string>\b(0[x|h])(?i)[A-F0-9]+\b</string>
 			<key>name</key>
 			<string>constant.character.hexadecimal.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(0[o|q])(?i)[0-7]+\b</string>
+			<key>name</key>
+			<string>constant.character.octal.assembly</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -42,7 +48,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i)[0-7]+(q|o)\b</string>
+			<string>\b(?i)[0-7]+[q|o]\b</string>
 			<key>name</key>
 			<string>constant.character.octal.assembly</string>
 		</dict>
