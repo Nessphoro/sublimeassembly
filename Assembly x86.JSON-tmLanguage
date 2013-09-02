@@ -70,6 +70,10 @@
             "match": ";.*$"
         },
         {  
+            "name": "source.assembly",
+            "match": ",|%%.|:"
+        },
+        {  
             "name": "entity.name.function.assembly",
             "match": "^\\s*%%.+?:$"
         },
@@ -84,6 +88,10 @@
         {  
             "name": "entity.name.function.assembly",
             "match": "^\\.?.+?\\b"
+        },
+        {  
+            "name": "entity.name.function.assembly",
+            "match": ".+?"
         }
     ], 
     "scopeName": "source.assembly", 

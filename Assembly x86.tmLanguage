@@ -136,6 +136,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>,|%%.|:</string>
+			<key>name</key>
+			<string>source.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>^\s*%%.+?:$</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
@@ -155,6 +161,12 @@
 		<dict>
 			<key>match</key>
 			<string>^\.?.+?\b</string>
+			<key>name</key>
+			<string>entity.name.function.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>.+?</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
 		</dict>
