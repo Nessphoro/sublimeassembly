@@ -25,6 +25,10 @@
             "match": "\\b(?i)[A-F0-9]+h\\b"
         },
         {  
+            "name": "constant.character.binary.assembly",
+            "match": "\\b(?i)(0|1)+b\\b"
+        },
+        {  
             "name": "string.assembly",
             "match": "(\"|').*?(\"|')"
         },

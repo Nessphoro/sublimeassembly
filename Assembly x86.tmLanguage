@@ -42,6 +42,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>\b(?i)(0|1)+b\b</string>
+			<key>name</key>
+			<string>constant.character.binary.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>("|').*?("|')</string>
 			<key>name</key>
 			<string>string.assembly</string>
