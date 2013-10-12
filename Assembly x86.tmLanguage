@@ -7,7 +7,7 @@
 		<string>asm</string>
 	</array>
 	<key>name</key>
-	<string>Assembly x86</string>
+	<string>Assembly x86 Intel (NASM)</string>
 	<key>patterns</key>
 	<array>
 		<dict>
