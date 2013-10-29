@@ -34,7 +34,7 @@
         },
         { "name": "support.function.directive.assembly",
           "begin": "^\\[",
-          "end": "\\]$"
+          "end": "\\]"
         },
         { "name": "support.function.directive.assembly",
           "match": "(^struc) ([_a-zA-Z][_a-zA-Z0-9]*)",
