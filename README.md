@@ -2,6 +2,8 @@ sublimeassembly
 ===============
 Also available on Package Control as NASM x86 Assembly 
 
+If you want to say thanks: consider tipping me on [Gittip](https://www.gittip.com/Nessphoro/)
+
 Provides actually decent code highlighting for x86-64 assembly in Sublime Text / TextMate.
 It includes full x86-64 instruction set, along with all NASM directives.
 
