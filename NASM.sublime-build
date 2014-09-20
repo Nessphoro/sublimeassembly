@@ -1,0 +1,16 @@
+{
+	"cmd": ["nasm", "-f", "elf64", "${file}"],
+	"file_regex": "a(sm)?$",
+	"working_dir": "${file_path}",
+	"selector": "untitled.asm",
+
+
+	"variants":
+	[
+		{
+			"name": "Run",
+			"shell": "true",
+			"cmd": ["nasm -f elf64 ${file} && ld ${file_base_name}.o && ${file_path}/a.out"]
+		}
+	]
+}
