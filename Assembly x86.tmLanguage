@@ -18,7 +18,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i)(RBP|EBP|BP|CS|DS|ES|FS|GS|SS|RAX|EAX|RBX|EBX|RCX|ECX|RDX|EDX|RCX|RIP|EIP|IP|RSP|ESP|SP|RSI|ESI|SI|RDI|EDI|DI|RFLAGS|EFLAGS|FLAGS|R(8|9|10|11|12|13|14|15)(d|w|b)?|(Y|X)MM([0-9]|10|11|12|13|14|15)|(A|B|C|D)(X|H|L)|CR([0-4]|DR([0-7]|TR6|TR7|EFER)))\b</string>
+			<string>\b(?i)(RBP|EBP|BP|CS|DS|ES|FS|GS|SS|RAX|EAX|RBX|EBX|RCX|ECX|RDX|EDX|RCX|RIP|EIP|IP|RSP|ESP|SP|RSI|ESI|SI|RDI|EDI|DI|RFLAGS|EFLAGS|FLAGS|R(8|9|10|11|12|13|14|15)(d|w|b)?|(Y|X)MM([0-9]|10|11|12|13|14|15)|(A|B|C|D)(X|H|L)|CR[0-4]|DR[0-7]|TR6|TR7|EFER)\b</string>
 			<key>name</key>
 			<string>variable.parameter.register.assembly</string>
 		</dict>
