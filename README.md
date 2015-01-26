@@ -1,14 +1,18 @@
-sublimeassembly
-===============
+Sublimeassembly 2
+=================
+New version of Sublime Text NASM syntax that you love, now with built-in documentation for most instructions. 
+Just right click and select Documentation. (But this only work in Sublime Text 3)
+
+More features are coming but contribution is always welcome.
+
+
+
 Also available on Package Control as NASM x86 Assembly 
 
 If you want to say thanks: consider tipping me on [Gittip](https://www.gittip.com/Nessphoro/)
 
-Provides actually decent code highlighting for x86-64 assembly in Sublime Text / TextMate.
-It includes full x86-64 instruction set, along with all NASM directives.
 
-
-Copyright (c) 2013, Pavlo Malynin
+Copyright (c) 2015, Pavlo Malynin
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
