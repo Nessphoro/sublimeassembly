@@ -7,7 +7,7 @@ import sys
 instruction_set = {}
 
 if sys.version_info < (3, 3):
-    raise RuntimeError('Anaconda works with Sublime Text 3 only')
+    raise RuntimeError('NASM Syntax works with Sublime Text 3 only')
 
 class docsCommand(sublime_plugin.TextCommand):
 
