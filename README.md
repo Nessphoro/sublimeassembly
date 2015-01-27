@@ -1,7 +1,7 @@
 Sublimeassembly 2
 =================
-New version of Sublime Text NASM syntax that you love, now with built-in documentation for most instructions. 
-Just right click and select Documentation. (But this only work in Sublime Text 3)
+New version of Sublime Text NASM syntax that you love, now with built-in documentation and auto-completion for most instructions. 
+Documentation and auto-completions only work in Sublime Text 3
 
 More features are coming but contribution is always welcome.
 

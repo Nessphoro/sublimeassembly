@@ -9,6 +9,26 @@ instruction_set = {}
 if sys.version_info < (3, 3):
     raise RuntimeError('NASM Syntax works with Sublime Text 3 only')
 
+
+def is_asm(view):
+    if view is None:
+        return False
+
+    try:
+        location = view.sel()[0].begin()
+    except IndexError:
+        return False
+    return view.match_selector(location, "source.assembly")
+
+
+class completionListener(sublime_plugin.EventListener):
+
+    def on_query_completions(self, view, prefix, locations):
+        if is_asm(view):
+            completions = [[instruction + " \t" + instruction_set[instruction]["Brief"], instruction.lower()]\
+             for instruction in instruction_set.keys() if instruction.startswith(prefix.upper())]
+            return completions
+
 class docsCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
@@ -19,7 +39,7 @@ class docsCommand(sublime_plugin.TextCommand):
         self.printPanel(edit, instruction_set[instruction.upper()])
 
     def iseEnabled(self, edit):
-        return True
+        return is_asm(self.view)
 
     def printPanel(self, edit, instruction):
         doc_panel = self.view.window().create_output_panel(
