@@ -85,28 +85,29 @@ class Context:
 
             if split[0].casefold().startswith("%include".casefold()) and self.view.file_name() is not None:
                 print("Scope extension")
-
-                fstart = split[1].index('"')
-                fend = split[1].rindex('"')
-                fName = split[1][fstart+1:fend]
-                fName = os.path.join(os.path.dirname(self._fileName), fName)
-                if os.path.isfile(fName):
-                    if fName in contexts:
-                        # Awesome, we have the file
-                        print("Added to includes")
-                        self.includes.add(fName)
-                        contexts[fName].ensureFresh()
-                    else:
-                        # We have to load it
-                        newView = sublime.active_window().find_open_file(fName)
-                        if newView is None:
-                            scanRequests.add(fName)
-                            sublime.active_window().open_file(fName)
+                try:
+                    fstart = split[1].index('"')
+                    fend = split[1].rindex('"')
+                    fName = split[1][fstart+1:fend]
+                    fName = os.path.join(os.path.dirname(self._fileName), fName)
+                    if os.path.isfile(fName):
+                        if fName in contexts:
+                            # Awesome, we have the file
+                            print("Added to includes")
+                            self.includes.add(fName)
+                            contexts[fName].ensureFresh()
                         else:
-                            context = Context(newView)
-                            context.rescan()
-                        self.includes.add(fName)
-
+                            # We have to load it
+                            newView = sublime.active_window().find_open_file(fName)
+                            if newView is None:
+                                scanRequests.add(fName)
+                                sublime.active_window().open_file(fName)
+                            else:
+                                context = Context(newView)
+                                context.rescan()
+                            self.includes.add(fName)
+                except:
+                    pass
 
             # figure out how much we skipped, if any.
             lskip = fullLine.index(split[0])
