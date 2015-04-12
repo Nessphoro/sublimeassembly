@@ -1,0 +1,280 @@
+[
+	{
+		"Name":"%define"
+	},
+	{
+		"Name": "%ifndef"
+	},
+	{
+		"Name": "%xdefine"
+	},
+	{
+		"Name": "%idefine"
+	},
+	{
+		"Name": "%undef"
+	},
+	{
+		"Name": "%assign"
+	},
+	{
+		"Name": "%defstr"
+	},
+	{
+		"Name": "%strcat"
+	},
+	{
+		"Name": "%strlen"
+	},
+	{
+		"Name": "%substr"
+	},
+	{
+		"Name": "%00"
+	},
+	{
+		"Name": "%0"
+	},
+	{
+		"Name": "%rotate"
+	},
+	{
+		"Name": "%rep"
+	},
+	{
+		"Name": "%endrep"
+	},
+	{
+		"Name": "%include"
+	},
+	{
+		"Name" : "%macro"
+	},
+	{
+		"Name":"$endmacro"
+	},
+	{
+		"Name" : "%unmacro"
+	},
+	{
+		"Name" : "%if"
+	},
+	{
+		"Name" : "%elif"
+	},
+	{
+		"Name" : "%else"
+	},
+	{
+		"Name" : "%endif"
+	},
+	{
+		"Name" : "%ifdef",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifmacro",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifctx",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifidn",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifidni",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifid",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifnum",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifstr",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%iftoken",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifempty",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%ifenv",
+		"Alias": ["%el{0}"]
+	},
+	{
+		"Name" : "%pathsearch"
+	},
+	{
+		"Name": "%depend"
+	},
+	{
+		"Name": "%use"
+	},
+	{
+		"Name": "%push"
+	},
+	{
+		"Name": "%pop"
+	},
+	{
+		"Name": "%repl"
+	},
+	{
+		"Name": "%arg"
+	},
+	{
+		"Name": "%stacksize"
+	},
+	{
+		"Name": "%local"
+	},
+	{
+		"Name": "%error"
+	},
+	{
+		"Name": "%warning"
+	},
+	{
+		"Name": "%fatal"
+	},
+	{
+		"Name": "%line"
+	},
+	{
+		"Name": "%!"
+	},
+	{
+		"Name": "%comment"
+	},
+	{
+		"Name": "%endcomment"
+	},
+	{
+		"Name": "__NASM_VERSION_ID__"
+	},
+	{
+		"Name": "__NASM_VER__"
+	},
+	{
+		"Name": "__FILE__"
+	},
+	{
+		"Name": "__LINE__"
+	},
+	{
+		"Name": "__BITS__"
+	},
+	{
+		"Name": "__OUTPUT_FORMAT__"
+	},
+	{
+		"Name": "__DATE__"
+	},
+	{
+		"Name": "__TIME__"
+	},
+	{
+		"Name": "__DATE_NUM__"
+	},
+	{
+		"Name": "__TIME_NUM__"
+	},
+	{
+		"Name": "__UTC_DATE__"
+	},
+	{
+		"Name": "__UTC_TIME__"
+	},
+	{
+		"Name": "__UTC_DATE_NUM__"
+	},
+	{
+		"Name": "__UTC_TIME_NUM__"
+	},
+	{
+		"Name": "__POSIX_TIME__"
+	},
+	{
+		"Name": "__PASS__"
+	},
+	{
+		"Name": "__SECT__"
+	},
+	{
+		"Name": "STRUC",
+		"Alias": ["END{0}"]
+	},
+	{
+		"Name": "ISTRUC",
+		"Alias": ["IEND"]
+	},
+	{
+		"Name": "AT"
+	},
+	{
+		"Name": "BITS",
+		"Alias": ["{0} 16","{0} 32","{0} 64"]
+	},
+	{
+		"Name": "USE",
+		"Alias": ["{0}16", "{0}32"]
+	},
+	{
+		"Name": "EXTERN"
+	},
+	{
+		"Name": "GLOBAL"
+	},
+	{
+		"Name": "COMMON"
+	},
+	{
+		"Name": "CPU"
+	},
+	{
+		"Name": "FLOAT"
+	},
+	{
+		"Name" : "equ"
+	},
+	{
+		"Name": "res",
+		"Alias": ["{0}b","{0}w","{0}d","{0}q","{0}t","{0}o","{0}y","{0}z"]
+	},
+	{
+		"Name": "times"
+	},
+	{
+		"Name": "align"
+	},
+	{
+		"Name": "alignb"
+	},
+	{
+		"Name": "sectalign"
+	},
+	{
+		"Name": "section"
+	},
+	{
+		"Name": "PTR"
+	},
+	{
+		"Name": "byte",
+		"Alias": ["byte", "word", "dword", "qword"]
+	},
+	{
+		"Name": "incbin"
+	}
+]

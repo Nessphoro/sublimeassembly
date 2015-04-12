@@ -6,7 +6,7 @@
 	[
 	{
 		"caption" : "Documentation",
-		"command" : "docs"
+		"command" : "assembly_doc"
 	}
 	]
 }

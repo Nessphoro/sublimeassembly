@@ -1,0 +1,1 @@
+{"sublime_text": "*", "platforms": ["*"], "dependencies": [], "version": "2.1.0", "description": "Provides actually decent code highlighting for x86-64 assembly in Sublime Text", "url": "https://github.com/Nessphoro/sublimeassembly"}

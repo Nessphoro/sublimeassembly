@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>asm</string>
+		<string>inc</string>
 	</array>
 	<key>name</key>
 	<string>Assembly x86 (NASM)</string>
