@@ -45,8 +45,13 @@ class Context:
     def ensureFresh(self):
         if os.path.getmtime(self._fileName) > self.mtime:
             if self.view.file_name() is None:
-                scanRequests.add(self._fileName)
-                sublime.active_window().open_file(self._fileName)
+                newView = sublime.active_window().find_open_file(self._fileName)
+                if newView is None:
+                    scanRequests.add(self._fileName)
+                    sublime.active_window().open_file(self._fileName)
+                else:
+                    self.changeView(newView)
+                    self.rescan()
 
 
 
@@ -92,8 +97,13 @@ class Context:
                     contexts[fName].ensureFresh()
                 else:
                     # We have to load it
-                    scanRequests.add(fName)
-                    sublime.active_window().open_file(fName)
+                    newView = sublime.active_window().find_open_file(fName)
+                    if newView is None:
+                        scanRequests.add(fName)
+                        sublime.active_window().open_file(fName)
+                    else:
+                        context = Context(newView)
+                        context.rescan()
                     self.includes.add(fName)
                 #except:
                     # too bad
@@ -130,6 +140,7 @@ class ContextManager(sublime_plugin.EventListener):
         sublime.set_timeout(timeoutCallback, 1000)
         if view.id() in contexts or view.file_name() in contexts:
             if view.file_name() in contexts:
+                contexts[view.file_name()].changeView(view)
                 contexts[view.file_name()].rescan()
             else:
                 contexts[view.id()].rescan()
@@ -138,7 +149,7 @@ class ContextManager(sublime_plugin.EventListener):
             context.rescan()
 
     def on_load_async(self, view):
-        if view.file_name() in scanRequests:
+        if view.file_name() in scanRequests or view.file_name() in contexts:
             view.set_syntax_file("Packages/NASM x86 Assembly/Assembly x86.tmLanguage")
         if is_asm(view):
             if view.file_name() not in contexts:
