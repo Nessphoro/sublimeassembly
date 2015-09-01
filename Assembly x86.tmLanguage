@@ -107,6 +107,14 @@
 			<string>support.function.directive.assembly</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>^%comment</string>
+			<key>end</key>
+			<string>^%endcomment</string>
+			<key>name</key>
+			<string>comment.assembly</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>

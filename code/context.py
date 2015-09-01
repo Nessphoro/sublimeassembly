@@ -103,6 +103,7 @@ class Context:
                                 scanRequests.add(fName)
                                 sublime.active_window().open_file(fName)
                             else:
+                                newView.set_syntax_file("Packages/NASM x86 Assembly/Assembly x86.tmLanguage")
                                 context = Context(newView)
                                 context.rescan()
                             self.includes.add(fName)
