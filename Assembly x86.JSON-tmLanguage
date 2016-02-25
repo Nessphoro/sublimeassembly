@@ -80,19 +80,19 @@
         },
         {  
             "name": "entity.name.function.assembly",
-            "match": "^\\s*%%.+?:$"
+            "match": "^\\s*%%(.-[;])+?:$"
         },
         {  
             "name": "entity.name.function.assembly",
-            "match": "^\\s*%\\$.+?:$"
+            "match": "^\\s*%\\$(.-[;])+?:$"
         },
         {  
             "name": "entity.name.function.assembly",
-            "match": "^\\.?.+?:$"
+            "match": "^\\.?(.-[;])+?:$"
         },
         {  
             "name": "entity.name.function.assembly",
-            "match": "^\\.?.+?\\b"
+            "match": "^\\.?(.-[;])+?\\b"
         },
         {  
             "name": "entity.name.function.assembly",

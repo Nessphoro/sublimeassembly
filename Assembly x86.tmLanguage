@@ -151,25 +151,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*%%.+?:$</string>
+			<string>^\s*%%(.-[;])+?:$</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*%\$.+?:$</string>
+			<string>^\s*%\$(.-[;])+?:$</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\.?.+?:$</string>
+			<string>^\.?(.-[;])+?:$</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\.?.+?\b</string>
+			<string>^\.?(.-[;])+?\b</string>
 			<key>name</key>
 			<string>entity.name.function.assembly</string>
 		</dict>
