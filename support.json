@@ -51,7 +51,7 @@
 		"Name" : "%macro"
 	},
 	{
-		"Name":"$endmacro"
+		"Name": "%endmacro"
 	},
 	{
 		"Name" : "%unmacro"
