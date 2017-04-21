@@ -6,6 +6,7 @@
 	<array>
 		<string>asm</string>
 		<string>inc</string>
+		<string>nasm</string>
 	</array>
 	<key>name</key>
 	<string>Assembly x86 (NASM)</string>
