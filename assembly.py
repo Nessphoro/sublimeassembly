@@ -1,4 +1,4 @@
-from .code import *
+from .plugin import *
 import sublime
 import sublime_plugin
 import json
@@ -10,6 +10,7 @@ if sys.version_info < (3, 3):
     raise RuntimeError('NASM Syntax works with Sublime Text 3 only')
 
 def plugin_loaded():
+    set_syntax_path(os.path.join(os.path.dirname(__file__), "Assembly x86.tmLanguage"))
     json_data = open(os.path.join(os.path.dirname(__file__), 'instructions.json'), encoding='utf-8-sig')
     data = json.load(json_data)
     json_data.close()
@@ -28,6 +29,5 @@ def plugin_loaded():
         support_set[support["Name"]] = support
         if "Alias" in support:
             for alias in support["Alias"]:
-
-                support_set[alias.format(support["Name"])] = instruction
+                support_set[alias.format(support["Name"])] = support
     print("Loaded support set")

@@ -70,47 +70,47 @@
 	},
 	{
 		"Name" : "%ifdef",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifdef"]
 	},
 	{
 		"Name" : "%ifmacro",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifmacro"]
 	},
 	{
 		"Name" : "%ifctx",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifctx"]
 	},
 	{
 		"Name" : "%ifidn",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifidn"]
 	},
 	{
 		"Name" : "%ifidni",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifidni"]
 	},
 	{
 		"Name" : "%ifid",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifid"]
 	},
 	{
 		"Name" : "%ifnum",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifnum"]
 	},
 	{
 		"Name" : "%ifstr",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifstr"]
 	},
 	{
 		"Name" : "%iftoken",
-		"Alias": ["%el{0}"]
+		"Alias": ["%eliftoken"]
 	},
 	{
 		"Name" : "%ifempty",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifempty"]
 	},
 	{
 		"Name" : "%ifenv",
-		"Alias": ["%el{0}"]
+		"Alias": ["%elifenv"]
 	},
 	{
 		"Name" : "%pathsearch"

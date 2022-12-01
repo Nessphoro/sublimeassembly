@@ -5,6 +5,7 @@ from time import time
 from .helpers import is_name, is_asm
 
 global contexts
+syntax_path = "Packages/NASM x86 Assembly/Assembly x86.tmLanguage"
 contexts = dict()
 processing = dict()
 scanRequests = set()
@@ -103,7 +104,7 @@ class Context:
                                 scanRequests.add(fName)
                                 sublime.active_window().open_file(fName)
                             else:
-                                newView.set_syntax_file("Packages/NASM x86 Assembly/Assembly x86.tmLanguage")
+                                newView.set_syntax_file(syntax_path)
                                 context = Context(newView)
                                 context.rescan()
                             self.includes.add(fName)
@@ -151,7 +152,7 @@ class ContextManager(sublime_plugin.EventListener):
 
     def on_load_async(self, view):
         if view.file_name() in scanRequests or view.file_name() in contexts:
-            view.set_syntax_file("Packages/NASM x86 Assembly/Assembly x86.tmLanguage")
+            view.set_syntax_file(syntax_path)
         if is_asm(view):
             if view.file_name() not in contexts:
                 print("File was loaded out-of-band")
@@ -180,3 +181,12 @@ class ContextManager(sublime_plugin.EventListener):
 
                 del processing[view.id()]
                 del processing[view.file_name()]
+
+def set_syntax_path(full_path):
+    global syntax_path
+    try:
+        package_idx = full_path.rindex("Packages")
+        syntax_path = full_path[package_idx:]
+    except:
+        print("Couldn't extract Packages path")
+    print("Will this path for syntax: ", syntax_path)
