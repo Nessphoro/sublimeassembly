@@ -1,0 +1,80 @@
+%YAML 1.2
+---
+name: Assembly x86 (NASM)
+file_extensions:
+  - asm
+  - inc
+  - nasm
+uuid: 32257fc7-0688-47c7-9540-f4c2d7affea4
+scope: source.asm
+
+contexts:
+  main:
+    - include: comment-single-line
+    - include: string-double
+    - include: keyword
+    - include: section
+    - include: var
+    - include: type
+    - include: punctuation
+    - include: number
+    - include: label
+
+  comment-single-line:
+    - match: \;
+      scope: punctuation.definition.comment.asm
+      push:
+        - meta_scope: comment.line.asm
+        - match: $\n?
+          pop: true
+
+  string-double:
+    - match: '"'
+      scope: punctuation.definition.string.begin.asm
+      push:
+        - meta_scope: string.quoted.double.asm
+        - match: \\.
+          scope: constant.character.escape.asm
+        - match: '"'
+          scope: punctuation.definition.string.end.asm
+          pop: true
+
+  keyword:
+    - match: \b(global|section)\b
+      scope: keyword.asm
+    - match: \b(mov|syscall)\b
+      scope: keyword.control.asm
+
+  section:
+    - match: '(\.data|\.bss|\.text)'
+      scope: support.class.asm
+
+  punctuation:
+    - match: \.
+      scope: punctuation.delimiter.period.dot.asm
+    - match: \,
+      scope: punctuation.delimiter.comma.asm
+    - match: ':'
+      scope: punctuation.separator.key-value.colon.asm
+
+  number:
+    - match: (?:(?:[-]?)(?:[0-9e]*)(?:[.]){1}(?:[0-9]+))
+      scope: constant.numeric.float.decimal.asm
+    - match: \b(?:0[xX])(?:[0-9a-fA-F]+)
+      scope: constant.numeric.hex.asm
+    - match: \b(?:[-]?)(?:[0-9]+)
+      scope: constant.numeric.integer.decimal.asm
+
+  label:
+    - match: '([a-z]):?'
+      captures:
+        0: meta.asm
+        1: entity.name.function.asm
+
+  var:
+    - match: '(rax|rdi|rsi)'
+      scope: variable.asm
+
+  type:
+    - match: 'db|dw|dd|dq|resb|resw|resd|resq'
+      scope: support.function.asm
