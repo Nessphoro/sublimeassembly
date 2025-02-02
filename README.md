@@ -5,7 +5,7 @@ Documentation and auto-completions only work in Sublime Text 3
 
 More features are coming but contribution is always welcome.
 
-
+[instructions.json](./instructions.json) is used to auto-generate the [instructions matching regex](./Assembly%20x86.tmLanguage#L17) using a [perl script](./main.pl).
 
 Also available on Package Control as NASM x86 Assembly 
 
