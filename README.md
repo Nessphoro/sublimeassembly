@@ -9,8 +9,6 @@ More features are coming but contribution is always welcome.
 
 Also available on Package Control as NASM x86 Assembly 
 
-If you want to say thanks: consider tipping me on [Gittip](https://www.gittip.com/Nessphoro/)
-
 
 Copyright (c) 2015, Pavlo Malynin
 All rights reserved.
