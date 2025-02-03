@@ -5,7 +5,7 @@ Documentation and auto-completions only work in Sublime Text 3
 
 More features are coming but contribution is always welcome.
 
-[instructions.json](./instructions.json) is used to auto-generate the [instructions matching regex](./Assembly%20x86.tmLanguage#L17) using a [perl script](./main.pl).
+To auto-generate the [instructions matching regex](./Assembly%20x86.tmLanguage#L17) from [instructions.json](./instructions.json) run `perl -Mstrict -MJSON -MFile::Slurp -MRegexp::Optimizer -e 'print Regexp::Optimizer->new->optimize(qr(@{[ join("|", @{[ grep {!/cc$/} map { lc($_ =~ s/^\s+|\s.*//r) } map { @{ $_->{Alias} }, $_->{Name} } @{ decode_json(scalar read_file("instructions.json")) } ]}) ]})) =~ s/^\(\?\^:\(\?\^:/\\b\(\?i\)\(v\)\?\(/r =~ s/\)$/\\b/r, "\n";'`.
 
 Also available on Package Control as NASM x86 Assembly 
 
