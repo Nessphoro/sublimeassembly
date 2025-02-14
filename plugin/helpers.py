@@ -65,4 +65,4 @@ def printDocPanel(view, instruction, location=-1):
                 <p>%s</p>
             </body>
         """ % (instruction["Name"], instruction["Brief"], instruction["Description"].replace("\n", "<br>"))
-        view.show_popup(html, max_width=400, max_height=300, flags=sublime.HIDE_ON_MOUSE_MOVE_AWAY)
+        view.show_popup(html, max_width=400, max_height=300, location=location, flags=sublime.HIDE_ON_MOUSE_MOVE_AWAY)
