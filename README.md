@@ -1,15 +1,29 @@
 Sublimeassembly 2
 =================
 New version of Sublime Text NASM syntax that you love, now with built-in documentation and auto-completion for most instructions. 
-Documentation and auto-completions only work in Sublime Text 3
+Documentation and auto-completions only work in Sublime Text 3 and above
 
 More features are coming but contribution is always welcome.
 
-To auto-generate the [instructions matching regex](./Assembly%20x86.tmLanguage#L17) from [instructions.json](./instructions.json) run `perl -MJSON -MFile::Slurp -MRegexp::Optimizer -e 'print "\\b(?i)", Regexp::Optimizer->new->optimize(qr(@{[join("|", @{[grep {!/cc$/} map {lc s/^\s+|\s.*//r} map {@{$_->{Alias}},$_->{Name}} @{decode_json(scalar read_file("instructions.json"))}]})]})), "\\b\n";'`.
-
 Also available on Package Control as NASM x86 Assembly 
 
+# Contributing
+Syntax is now auto generated from `instructions.json` which serves as the source of truth.
+This file contains the mnemonics, their alises and descriptions.
 
+The syntax can be regenerated like
+```bash
+$ ./etc/generate_syntax.py
+```
+
+This file is mechanically generated from [Felix's Reference](https://www.felixcloutier.com/x86/).
+Since Felix in turn mechnically generates his data from PDFs the resulting data format is not very
+stable. So...we just feed the HTML into an LLM and pray. 
+
+The generated data is reasonable so we'll stick with it.
+
+
+# LICENSE
 Copyright (c) 2015, Pavlo Malynin
 All rights reserved.
 
