@@ -76,7 +76,6 @@ class Context:
         lines = self.view.lines(fileRegion)
         for l in lines:
             if self.checkintersction(self.view.sel(), l):
-                print("intersection")
                 continue
             fullLine = self.view.substr(l)
             line = fullLine.strip()
@@ -85,7 +84,6 @@ class Context:
             split = line.split(" ", maxsplit=1)
 
             if split[0].casefold().startswith("%include".casefold()) and self.view.file_name() is not None:
-                print("Scope extension")
                 try:
                     fstart = split[1].index('"')
                     fend = split[1].rindex('"')
@@ -94,7 +92,6 @@ class Context:
                     if os.path.isfile(fName):
                         if fName in contexts:
                             # Awesome, we have the file
-                            print("Added to includes")
                             self.includes.add(fName)
                             contexts[fName].ensureFresh()
                         else:
@@ -116,8 +113,6 @@ class Context:
             termStart = l.begin() + lskip
             if is_name(termStart, self.view):
                 self.locals.add((split[0].strip(":"), "label"))
-        print(self.locals)
-
 
 
 

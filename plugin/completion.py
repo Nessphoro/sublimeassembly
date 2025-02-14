@@ -5,6 +5,17 @@ from .context import *
 
 class completionListener(sublime_plugin.EventListener):
 
+    def on_hover(self, view, point, hover_zone):
+        if not is_asm(view):
+            return
+        if hover_zone == sublime.HOVER_TEXT:
+            line = view.line(point)
+            if is_instruction_name(point, view):
+                selectedLine = str(view.substr(line)).strip()
+                splitLine = selectedLine.split(' ', maxsplit=1)
+                instruction = splitLine[0]
+                printDocPanel(view, instruction_set[instruction.upper()], location=point)
+
     def on_query_completions(self, view, prefix, locations):
         if is_asm(view):
             prefixLineStart = view.line(locations[0])
@@ -14,10 +25,9 @@ class completionListener(sublime_plugin.EventListener):
             if(len(splitLine) > 1):
                 # The user is typing in the middle. Check if the start was a label
                 if is_name(prefixLineStart.begin()+lskip, view):
-                    print("Lable first")
+                    pass
                 else:
                     # No a label start, so could be instruction or a support directive
-                    print("Instuction context")
                     return self.handleInstructionContext(view, prefix, locations)
             else:
                 prefix = line  # the user is just starting to type
